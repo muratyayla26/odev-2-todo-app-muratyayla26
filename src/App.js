@@ -23,9 +23,26 @@ function App() {
     }
   }
   
+  useEffect(() => {
+    getLocalStorage();
+  },[]);
+
   useEffect( () => {
     filterTodos();
+    saveLocalStorage();
   },[todos, status]);
+
+  const saveLocalStorage = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+
+  const getLocalStorage = () => {
+    if(localStorage.getItem("todos") === null){
+      localStorage.setItem("todos", JSON.stringify([]));
+    }
+    const firstLocalTodos = JSON.parse(localStorage.getItem("todos"));
+    setTodos(firstLocalTodos);
+  }
 
   return (
     <div>
