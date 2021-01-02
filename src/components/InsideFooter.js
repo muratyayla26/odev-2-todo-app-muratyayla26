@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import PropTypes from "prop-types";
 
 const InsideFooter = ({ todos, setTodos, setStatus, status }) => {
     const [uncompletedNumber, setUncompletedNumber] = useState(0);
@@ -53,5 +54,12 @@ const InsideFooter = ({ todos, setTodos, setStatus, status }) => {
         </footer>
     );
 };
+
+InsideFooter.propTypes = {
+    todos: PropTypes.array,
+    setTodos: PropTypes.func,
+    status: PropTypes.string,
+    setStatus: PropTypes.func
+}
 
 export default InsideFooter;

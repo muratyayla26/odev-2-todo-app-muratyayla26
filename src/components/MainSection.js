@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Todo from "./Todo";
+import PropTypes from "prop-types";
 
 const MainSection = ({filteredTodos, todos, setTodos}) => {
     const [initStatus, setInitStatus] = useState(false);
@@ -30,7 +31,7 @@ const MainSection = ({filteredTodos, todos, setTodos}) => {
             <ul className="todo-list">{
                 filteredTodos.map(todo => {
                     return (
-                            <Todo setInitStatus={setInitStatus} todos={todos} setTodos={setTodos} key={todo.id} todoContent={todo} />
+                        <Todo setInitStatus={setInitStatus} todos={todos} setTodos={setTodos} key={todo.id} todoContent={todo} />
                     );
                 })
                 }
@@ -38,5 +39,11 @@ const MainSection = ({filteredTodos, todos, setTodos}) => {
         </div>
     );
 };
+
+MainSection.propTypes = {
+    todos: PropTypes.array,
+    filteredTodos: PropTypes.array,
+    setTodos: PropTypes.func
+}
 
 export default MainSection;

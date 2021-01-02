@@ -1,4 +1,6 @@
-const Todo = ({todoContent, todos, setTodos, setInitStatus}) => {
+import PropTypes from "prop-types";
+
+const Todo = ({todoContent, todos, setTodos}) => {
     const completedHandler = () => {
         setTodos(todos.map(item=>{
             if(item.id===todoContent.id){
@@ -26,6 +28,12 @@ const Todo = ({todoContent, todos, setTodos, setInitStatus}) => {
             </div>
         </li>
     )
+}
+
+Todo.propTypes = {
+    todos: PropTypes.array,
+    setTodos: PropTypes.func,
+    todoContent: PropTypes.object
 }
 
 export default Todo;

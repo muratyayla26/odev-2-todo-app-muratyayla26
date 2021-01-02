@@ -9,7 +9,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
-
+  
   const filterTodos = () => {
     switch (status) {
       case "active":
@@ -43,11 +43,11 @@ function App() {
     const firstLocalTodos = JSON.parse(localStorage.getItem("todos"));
     setTodos(firstLocalTodos);
   }
-
+ 
   return (
     <div>
       <section className="todoapp">
-        <Header todos={todos} setTodos={setTodos}/>
+        <Header setTodos={setTodos}/>
         <MainSection todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} className="mainSection"/>
         { todos.length > 0 ?
         <InsideFooter todos={todos} setTodos={setTodos} status={status} setStatus={setStatus}/>
