@@ -4,4 +4,6 @@ Also saves these informations to localStorage.
 
 This app is just a [clone](https://codepen.io/dmitrysharabin/pen/MWgQNYZ)
 
+[Live link of the project](https://eloquent-goldstine-cfc598.netlify.app)
+
 ![](images/readmeImage.png)
